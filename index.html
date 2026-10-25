@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172b25">
+  <meta name="description" content="Deine interaktive Packliste für die Sonnenaufgangswanderung auf den Augstenberg.">
+  <title>Gipfelbereit – Packliste</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Gipfelbereit Startseite">
+      <span class="brand-icon" aria-hidden="true">▲</span>
+      <span>GIPFELBEREIT</span>
+    </a>
+    <span class="topbar-label">DEINE PACKLISTE</span>
+  </header>
+
+  <main class="app">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">DEIN NÄCHSTES ABENTEUER</p>
+        <h1>Dem Morgen<br>entgegen<span class="accent">.</span></h1>
+        <p class="hero-description">
+          Sonnenaufgang am Augstenberg. Frische Bergluft,
+          die ersten Sonnenstrahlen und alles dabei, was du brauchst.
+        </p>
+        <div class="hero-tags">
+          <span>↟&nbsp; Augstenberg · 2.358 m</span>
+          <span>☼&nbsp; Sonnenaufgangstour</span>
+        </div>
+      </div>
+      <div class="mountain-art" aria-hidden="true">
+        <div class="sun"></div>
+        <svg viewBox="0 0 420 300" role="img" aria-label="">
+          <path class="mountain-back" d="M0 210 L95 95 L143 153 L222 37 L320 170 L365 115 L420 190 L420 300 L0 300Z"/>
+          <path class="mountain-mid" d="M0 244 L88 153 L137 202 L222 88 L295 188 L345 149 L420 227 L420 300 L0 300Z"/>
+          <path class="mountain-front" d="M0 272 L70 210 L128 246 L218 143 L285 226 L339 197 L420 257 L420 300 L0 300Z"/>
+          <path class="snow" d="M222 37 L200 80 L219 73 L231 90 L243 83 L262 113 L250 74Z"/>
+          <path class="snow" d="M365 115 L350 140 L365 135 L375 150 L385 141Z"/>
+        </svg>
+        <div class="hero-caption">GUTE AUSSICHTEN BEGINNEN MIT GUTER VORBEREITUNG.</div>
+      </div>
+    </section>
+
+    <section class="checklist-section" aria-labelledby="checklist-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ALLES IM RUCKSACK?</p>
+          <h2 id="checklist-heading">Deine Packliste</h2>
+        </div>
+        <button id="reset-button" class="text-button" type="button">
+          Zurücksetzen ↺
+        </button>
+      </div>
+
+      <div class="progress-card">
+        <div class="progress-top">
+          <div>
+            <span class="progress-label">DEIN FORTSCHRITT</span>
+            <p id="progress-message" class="progress-message">Auf geht's!</p>
+          </div>
+          <div class="progress-number">
+            <span id="completed-count">0</span><span class="progress-divider">/</span><span id="total-count">0</span>
+          </div>
+        </div>
+        <div
+          id="progress-track"
+          class="progress-track"
+          role="progressbar"
+          aria-label="Packlisten-Fortschritt"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <p id="progress-detail" class="progress-detail">Noch nichts abgehakt – packen wir's an.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Packliste filtern">
+          <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">Alles</button>
+          <button class="filter-button" type="button" data-filter="open" aria-pressed="false">Offen</button>
+          <button class="filter-button" type="button" data-filter="done" aria-pressed="false">Erledigt</button>
+        </div>
+        <span id="visible-count" class="visible-count"></span>
+      </div>
+
+      <div id="checklist" class="checklist" aria-live="polite"></div>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <span class="empty-icon" aria-hidden="true">✓</span>
+        <h3>Alles erledigt!</h3>
+        <p>Du bist bereit für deinen Sonnenaufgang am Berg.</p>
+        <button id="show-all-button" class="secondary-button" type="button">Gesamte Liste anzeigen</button>
+      </div>
+
+      <aside class="tip-card">
+        <div class="tip-icon" aria-hidden="true">✦</div>
+        <div>
+          <p class="tip-label">GIPFEL-TIPP</p>
+          <h3>Vergiss deine Kamera nicht!</h3>
+          <p>
+            Lade die Akkus heute Abend auf, prüfe deine Speicherkarte
+            und verstaue einen Ersatzakku möglichst warm. Bei Kälte
+            verlieren Akkus schneller an Leistung.
+          </p>
+        </div>
+      </aside>
+
+      <p class="storage-note">
+        <span aria-hidden="true">↻</span>
+        Dein Fortschritt wird automatisch auf diesem Gerät gespeichert.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>GIPFELBEREIT</span>
+    <span>RAUS. RAUF. DURCHATMEN.</span>
+  </footer>
+</body>
+</html>
